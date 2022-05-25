@@ -1,0 +1,22 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  TargetRailsVersion: 7.0
+  NewCops: enable
+  Exclude:
+    - "**/db/migrate/*"
+    - "db/schema.rb"
+    - "**/Gemfile.lock"
+    - "node_modules/**/*"
+
+Metrics/BlockLength:
+  IgnoredMethods: ["describe"]
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
