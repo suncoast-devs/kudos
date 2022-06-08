@@ -2,9 +2,18 @@
 
 class SlackController < ApplicationController
   skip_before_action :verify_authenticity_token
+  wrap_parameters false
 
   def events
-    render json: { challenge: params[:challenge] }
+    @event = Event.create!(platform: 'Slack', data: request.request_parameters)
+
+    if @event.data[:type] == 'url_verification'
+      @event.completed!
+      render json: { challenge: @event.data[:challenge] }
+    else
+      # TODO: handle other events
+      head :ok
+    end
   end
 
   def authorize
@@ -35,7 +44,8 @@ class SlackController < ApplicationController
           uid: auth_data.dig(:team, :id),
           access_token: auth_data[:access_token],
           refresh_token: auth_data[:refresh_token],
-          expires_at: auth_data[:expires_in].seconds.from_now
+          expires_at: auth_data[:expires_in].seconds.from_now,
+          data: auth_data
         )
       end
     end

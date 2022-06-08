@@ -1,0 +1,84 @@
+{
+  "token": "[FILTERED]",
+  "team_id": "T7HH5AJ56",
+  "api_app_id": "A03HYLZEXNG",
+  "event": {
+    "client_msg_id": "d87a6f90-88b1-4b47-8758-908fb445814e",
+    "type": "message",
+    "text": "Hi.",
+    "user": "U7K9DSQ0P",
+    "ts": "1654710523.435689",
+    "team": "T7HH5AJ56",
+    "blocks": [
+      {
+        "type": "rich_text",
+        "block_id": "3YAjo",
+        "elements": [
+          {
+            "type": "rich_text_section",
+            "elements": [{ "type": "text", "text": "Hi." }]
+          }
+        ]
+      }
+    ],
+    "channel": "CE67Z171B",
+    "event_ts": "1654710523.435689",
+    "channel_type": "channel"
+  },
+  "type": "event_callback",
+  "event_id": "Ev03K751AR09",
+  "event_time": 1654710523,
+  "authorizations": [
+    {
+      "enterprise_id": null,
+      "team_id": "T7HH5AJ56",
+      "user_id": "U03JDS55A31",
+      "is_bot": true,
+      "is_enterprise_install": false
+    }
+  ],
+  "is_ext_shared_channel": false,
+  "event_context": "4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUN0hINUFKNTYiLCJhaWQiOiJBMDNIWUxaRVhORyIsImNpZCI6IkNFNjdaMTcxQiJ9",
+  "slack": {
+    "token": "[FILTERED]",
+    "team_id": "T7HH5AJ56",
+    "api_app_id": "A03HYLZEXNG",
+    "event": {
+      "client_msg_id": "d87a6f90-88b1-4b47-8758-908fb445814e",
+      "type": "message",
+      "text": "Hi.",
+      "user": "U7K9DSQ0P",
+      "ts": "1654710523.435689",
+      "team": "T7HH5AJ56",
+      "blocks": [
+        {
+          "type": "rich_text",
+          "block_id": "3YAjo",
+          "elements": [
+            {
+              "type": "rich_text_section",
+              "elements": [{ "type": "text", "text": "Hi." }]
+            }
+          ]
+        }
+      ],
+      "channel": "CE67Z171B",
+      "event_ts": "1654710523.435689",
+      "channel_type": "channel"
+    },
+    "type": "event_callback",
+    "event_id": "Ev03K751AR09",
+    "event_time": 1654710523,
+    "authorizations": [
+      {
+        "enterprise_id": null,
+        "team_id": "T7HH5AJ56",
+        "user_id": "U03JDS55A31",
+        "is_bot": true,
+        "is_enterprise_install": false
+      }
+    ],
+    "is_ext_shared_channel": false,
+    "event_context": "4-eyJldCI6Im1lc3NhZ2UiLCJ0aWQiOiJUN0hINUFKNTYiLCJhaWQiOiJBMDNIWUxaRVhORyIsImNpZCI6IkNFNjdaMTcxQiJ9"
+  }
+}

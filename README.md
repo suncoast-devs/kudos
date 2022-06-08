@@ -20,3 +20,9 @@
 - access_token
 - refresh_token
 - expires_at
+
+### Event
+
+- platform (e.g. Slack)
+- status (e.g. pending, processing, complete)
+- data (raw params)
