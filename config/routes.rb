@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   resource :organization, only: %i[show edit update]
 
+  # Limit access to dev only.
+  mount GoodJob::Engine => 'q' if Rails.env.development?
+
   root 'home#index'
 end

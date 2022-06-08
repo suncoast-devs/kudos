@@ -1,8 +1,15 @@
 # Kudos
 
+Setup application.
+
 ```
 ./bin/setup
-./bin/rails s
+```
+
+Run development server, using `foreman` or [`overmind`](https://evilmartians.com/chronicles/introducing-overmind-and-hivemind)
+
+```
+overmind start
 ```
 
 ## Models

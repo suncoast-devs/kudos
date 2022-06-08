@@ -11,7 +11,7 @@ class SlackController < ApplicationController
       @event.completed!
       render json: { challenge: @event.data[:challenge] }
     else
-      # TODO: handle other events
+      EventDispatchJob.perform_later(@event)
       head :ok
     end
   end

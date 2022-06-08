@@ -20,6 +20,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 gem 'faraday'
+gem 'good_job'
 
 # gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
@@ -35,3 +36,4 @@ end
 group :development do
   gem 'web-console'
 end
+
