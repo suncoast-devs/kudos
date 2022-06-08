@@ -19,6 +19,8 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
+gem 'faraday'
+
 # gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 

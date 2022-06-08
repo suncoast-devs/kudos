@@ -1,0 +1,10 @@
+<h1><%= @organization.name %></h1>
+
+<dl>
+  <dt>Emoji</dt>
+  <dd><%= @organization.emoji %></dd>
+  <dt>Daily Budget</dt>
+  <dd><%= @organization.daily_budget %></dd>
+</dl>
+
+<%= link_to "Edit", edit_organization_path %>

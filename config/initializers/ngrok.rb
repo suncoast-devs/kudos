@@ -1,1 +1,1 @@
-Rails.application.config.hosts << '*.ngrok.io'
+Rails.application.config.hosts << '.ngrok.io'

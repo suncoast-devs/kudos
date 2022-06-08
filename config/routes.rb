@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  scope :slack do
+    post 'events', to: 'slack#events'
+    get 'authorize', to: 'slack#authorize'
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resource :organization, only: %i[show edit update]
+
+  root 'home#index'
 end

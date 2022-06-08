@@ -1,0 +1,15 @@
+<%= form_for @organization do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :emoji %>
+    <%= f.text_field :emoji %>
+  </div>
+  <div>
+    <%= f.label :daily_budget %>
+    <%= f.number_field :daily_budget %>
+  </div>
+  <%= f.submit %>
+<% end %>
