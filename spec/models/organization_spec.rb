@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Organization, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has a default emoji' do
+    expect(subject.emoji).to eq('taco')
+  end
+
+  it 'has a default daily budget' do
+    expect(subject.daily_budget).to eq(5)
+  end
 end

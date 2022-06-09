@@ -5,15 +5,14 @@ class EventDispatchJob < ApplicationJob
     @event = args.first
     @event.processing!
 
-    if @event.platform == 'Slack'
-      case @event.dig('event', 'type')
-      when 'reaction_added'
-        ReactionAddedJob.perform_later(@event)
-      else
-        raise "Unsupported event type: #{@event.dig('event', 'type')}"
-      end
+    raise "Unsupported platform: #{@event.platform}" unless @event.platform == 'Slack'
+
+    event_type = @event.data.dig('event', 'type')
+    case event_type
+    when 'reaction_added', 'reaction_removed', 'message'
+      "Slack#{event_type.camelize}Job".constantize.perform_later(@event)
     else
-      raise "Unsupported platform: #{@event.platform}"
+      raise "Unsupported event type: #{event_type}"
     end
   end
 end

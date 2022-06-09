@@ -33,3 +33,14 @@ overmind start
 - platform (e.g. Slack)
 - status (e.g. pending, processing, complete)
 - data (raw params)
+
+### Persona
+
+- platform (e.g. Slack)
+- uid (e.g. U7K9DSQ0P)
+- name
+
+### Conferral
+
+- giver (Persona)
+- receiver (Persona)

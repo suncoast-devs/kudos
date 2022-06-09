@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_184019) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_180842) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_184019) do
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_authorizations_on_organization_id"
     t.index ["platform", "uid"], name: "index_authorizations_on_platform_and_uid", unique: true
+  end
+
+  create_table "conferrals", force: :cascade do |t|
+    t.bigint "giver_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["giver_id"], name: "index_conferrals_on_giver_id"
+    t.index ["receiver_id"], name: "index_conferrals_on_receiver_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -76,5 +85,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_184019) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "personas", force: :cascade do |t|
+    t.bigint "organization_id", null: false
+    t.string "platform"
+    t.string "uid"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_personas_on_organization_id"
+  end
+
   add_foreign_key "authorizations", "organizations"
+  add_foreign_key "conferrals", "personas", column: "giver_id"
+  add_foreign_key "conferrals", "personas", column: "receiver_id"
+  add_foreign_key "personas", "organizations"
 end

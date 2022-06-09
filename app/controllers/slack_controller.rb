@@ -5,7 +5,7 @@ class SlackController < ApplicationController
   wrap_parameters false
 
   def events
-    @event = Event.create!(platform: 'Slack', data: request.request_parameters)
+    @event = Event.slack.create!(data: request.request_parameters)
 
     if @event.data[:type] == 'url_verification'
       @event.completed!
@@ -35,12 +35,11 @@ class SlackController < ApplicationController
 
     return render(json: auth_data) unless auth_data[:ok]
 
-    @organization = Authorization.find_by(platform: 'Slack', uid: auth_data.dig(:team, :id))&.organization
+    @organization = Authorization.slack.find_by(uid: auth_data.dig(:team, :id))&.organization
     if @organization.blank?
       ActiveRecord::Base.transaction do
         @organization = Organization.create!(name: auth_data.dig(:team, :name))
-        @organization.authorizations.create!(
-          platform: 'Slack',
+        @organization.authorizations.slack.create!(
           uid: auth_data.dig(:team, :id),
           access_token: auth_data[:access_token],
           refresh_token: auth_data[:refresh_token],
