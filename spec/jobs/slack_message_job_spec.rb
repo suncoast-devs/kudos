@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe SlackMessageJob, type: :job do
   before do
-    organization = Organization.create(name: 'SDG Kudos')
+    organization = Organization.create(name: 'SDG')
     organization.authorizations.slack.create(uid: 'T7HH5AJ56')
   end
 

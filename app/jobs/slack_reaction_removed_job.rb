@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SlackReactionRemovedJob < ApplicationJob
   queue_as :default
 
