@@ -32,6 +32,6 @@ class SlackMessageJob < ApplicationJob
   end
 
   def organization
-    @organization ||= Organization.find_by(slack_team_id: @event.data.dig('team', 'id'))
+    @organization ||= @organization = Authorization.slack.find_by(uid: @event.data.dig('event', 'team'))&.organization
   end
 end
